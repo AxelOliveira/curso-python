@@ -17,3 +17,32 @@ digito = 9
 novo_digito = digito if digito <= 9 else 0       # Se o digito for maior que 9 ele vira 0
 novo_digito = 0 if digito > 9 else digito
 print(novo_digito)
+
+# ---------------------------------------------------------------------------------------------------------------------------
+
+# 1 - Criação da variável
+numero = 25
+
+# 2 - Verificação se o número é par ou impar
+resultado = 'par' if numero % 2 == 0 else 'ímpar'
+
+# 3 - Impressão do valor
+print(resultado)
+
+# ---------------------------------------------------------------------------------------------------------------------------
+
+# 1 - Importar o modulo random
+import random
+
+# 2 - Gera um número aletório entre 1 e 100
+numero = random.randint(0, 100)
+
+# 3 - Classifica usando ternário encadeado
+resultado = (
+    'menor que 50' if numero < 50
+    else 'igual a 50' if numero == 50
+    else 'maior que 50'
+)
+
+print(f'Número gerado: {numero}')
+print(f'Resultado: {resultado}')

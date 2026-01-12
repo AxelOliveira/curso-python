@@ -10,9 +10,10 @@ Em listas, você muda o conteúdo, não cria outra lista.
 Lista vazia também é lista, ela é:
  falsa em contexto booleano
  mas ainda é um objeto válido
+sum() soma todos os números de uma lista automaticamente.
 """
-#           +01234
-#           -54321
+#        +01234
+#        -54321
 string = 'ABCDE'   # 5 caracteres (len)
 # print(bool([]))    # falsy
 # print(lista, type(lista))
