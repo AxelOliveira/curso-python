@@ -1,5 +1,6 @@
 """
 Desempacotamento em chamadas de métodos e funções
+O operador * "abre" uma sequência e passa cada item separadamente
 """
 string = 'ABCD'
 lista = ['Maria', 'Helena', 1, 2, 3, 'Eduarda']

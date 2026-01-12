@@ -25,22 +25,31 @@ Contrário disso:
 O primeiro dígito do CPF é 7
 """
 
+# 1 - Informa o CPF como string para permitir fatiamento
+cpf = '74682489070'   
 
-cpf = '74682489070'                      
-nove_digitos = cpf[:9]                      # Fatiamento do cpf para ficar com 9 digitos
+# 2 - Separa apenas os 9 primeiros dígitos do CPF
+nove_digitos = cpf[:9]  
+
+# 3 - Inicializa o contador regressivo que será usado nas multiplicações
 contador_regressivo_1 = 10
 
+# 4 - Inicializa o acumulador que guardará a soma dos resultados
 resultado_digito_1 = 0
-for digito in nove_digitos:
-    resultado_digito_1 += int(digito) * contador_regressivo_1
-    contador_regressivo_1 -= 1
-digito_1 = (resultado_digito_1 * 10) % 11
-digito_1 = digito_1 if digito_1 <= 9 else 0
-print(digito_1)
-# 1 - Informo cpf
-# 2 - faço a multiplicação
-# 3 - coleto o resultado da multiplicação e faço a soma
-# 4 - multiplico o resultado da soma por 10
-# 5 - faço a divisão do resultado da segunda multiplicação por 11 e obtenho o resto da divisao
-# 6 - Verifico se o resultado é maior que 9 ou não
 
+# 5 - Percorre cada dígito dos 9 dígitos do cpf
+for digito in nove_digitos:
+    # 6 - Converte o dígito para inteiro e multiplica pelo contador atual
+    resultado_digito_1 += int(digito) * contador_regressivo_1
+    # 7 - Decrementa o contador para a próxima multiplicação
+    contador_regressivo_1 -= 1
+
+# 8 - Multiplica o resultado total da soma por 10
+digito_1 = (resultado_digito_1 * 10) % 11
+
+# 9 - Calcula o resto da divisão por 11
+#     Se o resultado for maior que 9, o dígito final é 0
+digito_1 = digito_1 if digito_1 <= 9 else 0
+
+# 10 - Exibe o primeiro dígito verificador
+print(digito_1)

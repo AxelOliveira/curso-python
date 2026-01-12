@@ -1,11 +1,20 @@
 """
 Interpretador do Python
 
-python mod.py (executa o mod)
-python -u (unbuffered)
-python -m mod (lib mod como script)
-python -c 'cmd' (comando)
-python -i mod.py (interativo com mod)
+python mod.py
+- Executa um arquivo Python normalmente (modo mais comum)
+
+python -u 
+- Executa sem buffer de saída (print aparece imediatamente, útil para logs)
+
+python -m mod
+- Executa um módulo como script (muito usado em bibliotecas)
+
+python -c 'cmd'
+- Executa um comando python direto no terminal, sem arquivo
+
+python -i mod.py
+- Executa o arquivo e entra no modo interativo depois
 
 The Zen of Python, por Tim Peters
 
