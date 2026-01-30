@@ -1,15 +1,15 @@
-"""
-🟢 FUNDAMENTOS INICIAIS
-📄 01_print_variaveis_tipos_basicos
-🧩 Exercício
-Crie variáveis para:
-- nome (string)
-- idade (int)
-- altura (float)
-- maior_de_idade (bool)
-Imprima todas em uma única frase formatada.
-🎯 Tipos primitivos e saída de dados
-"""
+# """
+# 🟢 FUNDAMENTOS INICIAIS
+# 📄 01_print_variaveis_tipos_basicos
+# 🧩 Exercício
+# Crie variáveis para:
+# - nome (string)
+# - idade (int)
+# - altura (float)
+# - maior_de_idade (bool)
+# Imprima todas em uma única frase formatada.
+# 🎯 Tipos primitivos e saída de dados
+# """
 # 1 - Criação de variáveis com tipos primitivos
 nome = 'Wonwoo'
 idade = 18
@@ -19,20 +19,20 @@ maior_de_idade = idade >= 18
 # 2 - Retorno da frase com os valores das váriaveis e com formatação
 print(f'Seu nome é {nome}, você tem {idade} anos, sua altura é {altura} metros. Maior de idade? {maior_de_idade}')
 
-#-----------------------------------------------------------------------------------------------------------------
+# #-----------------------------------------------------------------------------------------------------------------
 
-"""
-📄 02_operadores_aritmeticos_e_precedencia
-🧩 Exercício
-Crie um código que calcule:
-- soma
-- subtração
-- multiplicação
-- divisão
-- potência
-Usando precedência correta de operadores.
-🎯 Ordem de execução matemática
-"""
+# """
+# 📄 02_operadores_aritmeticos_e_precedencia
+# 🧩 Exercício
+# Crie um código que calcule:
+# - soma
+# - subtração
+# - multiplicação
+# - divisão
+# - potência
+# Usando precedência correta de operadores.
+# 🎯 Ordem de execução matemática
+# """
 # 1 - Expressão matemática utilizando operadores e precedência
 soma = 31 + 7
 subtracao = soma - 44
@@ -43,16 +43,16 @@ potencia = divisao ** 13
 # 2 - Exibição do resultado respeitando a precedência dos operadores
 print(potencia)
 
-#-----------------------------------------------------------------------------------------------------------------
+# #-----------------------------------------------------------------------------------------------------------------
 
-"""
-📄 03_condicionais_if_elif_else
-🧩 Exercício
-Receba um número e informe:
-- se é par ou ímpar
-- se é maior, menor ou igual a 50
-🎯 Tomada de decisão
-"""
+# """
+# 📄 03_condicionais_if_elif_else
+# 🧩 Exercício
+# Receba um número e informe:
+# - se é par ou ímpar
+# - se é maior, menor ou igual a 50
+# 🎯 Tomada de decisão
+# """
 # 1 - Recebe o valor do usúario e converte para inteiro
 numero_usuario = int(input('Digite um número: '))
 
@@ -73,15 +73,15 @@ elif numero_usuario < 50:
 else:
     print('O número é igual a 50')
     
-#-----------------------------------------------------------------------------------------------------------------
+# #-----------------------------------------------------------------------------------------------------------------
 
-"""
-📄 04_operadores_logicos_e_relacionais
-🧩 Exercício
-Crie um sistema que:
-- verifique se a pessoa pode entrar (idade ≥ 18 e documento válido)
-🎯 AND / OR / NOT
-"""
+# """
+# 📄 04_operadores_logicos_e_relacionais
+# 🧩 Exercício
+# Crie um sistema que:
+# - verifique se a pessoa pode entrar (idade ≥ 18 e documento válido)
+# 🎯 AND / OR / NOT
+# """
 documento_valido = True
 
 # 1 - Entrada do usuario com a idade e conversão para um número inteiro
@@ -104,18 +104,18 @@ else:
     # 5.1 - Retorna que o usuario nao foi autorizado
     print('Usuario não autorizado, pois o usuario é menor de idade e o documento não é válido')
     
-#-----------------------------------------------------------------------------------------------------------------
+# #-----------------------------------------------------------------------------------------------------------------
 
-"""
-🟢 STRINGS
-📄 05_strings_indices_fatiamento_len
-🧩 Exercício
-Receba uma frase e:
-- imprima o primeiro caractere
-- o último caractere
-- o tamanho da frase
-🎯 Índices e fatiamento
-"""
+# """
+# 🟢 STRINGS
+# 📄 05_strings_indices_fatiamento_len
+# 🧩 Exercício
+# Receba uma frase e:
+# - imprima o primeiro caractere
+# - o último caractere
+# - o tamanho da frase
+# 🎯 Índices e fatiamento
+# """
 # 1 - Recebe a frase do usuario
 frase_usuario = input('Digite uma frase: ')
 
@@ -126,16 +126,16 @@ print(f'O último caractere da frase é: {frase_usuario[-1]}')
 # 4 - Retorna ao usuario o tamanho da frase
 print(f'O tamnho da frase é: {len(frase_usuario)}')
     
-#-----------------------------------------------------------------------------------------------------------------
+# #-----------------------------------------------------------------------------------------------------------------
 
-"""
-📄 06_strings_metodos_upper_lower_replace
-🧩 Exercício
-Receba um texto e:
-- transforme em maiúsculo
-- substitua uma palavra específica
-🎯 Manipulação de strings
-"""
+# """
+# 📄 06_strings_metodos_upper_lower_replace
+# 🧩 Exercício
+# Receba um texto e:
+# - transforme em maiúsculo
+# - substitua uma palavra específica
+# 🎯 Manipulação de strings
+# """
 # 1 - Recebe a frase do usuario
 texto_usuario = input('Digite um texto: ')
 
@@ -150,16 +150,16 @@ palavra_antiga = input('Digite a palavra que deseja substituir: ')
 palavra_nova = input('Digite a nova palavra: ')
 
 print(texto_usuario.replace(palavra_antiga, palavra_nova))
-#-----------------------------------------------------------------------------------------------------------------
+# #-----------------------------------------------------------------------------------------------------------------
 
-"""
-📄 07_strings_split_join
-🧩 Exercício
-Receba uma frase:
-- transforme em lista com split
-- una novamente com join usando -
-🎯 Conversão string ↔ lista
-"""
+# """
+# 📄 07_strings_split_join
+# 🧩 Exercício
+# Receba uma frase:
+# - transforme em lista com split
+# - una novamente com join usando -
+# 🎯 Conversão string ↔ lista
+# """
 # 1 - Recebe uma frase do usuario
 frase_usuario = input('Digite uma frase: ')
 
@@ -173,18 +173,18 @@ print()
 frase_unidas = '-'.join(frase_usuario)
 print(frase_unidas)
    
-#-----------------------------------------------------------------------------------------------------------------
+# #-----------------------------------------------------------------------------------------------------------------
 
-"""
-🟢 LISTAS
-📄 08_listas_criacao_indices_append_pop
-🧩 Exercício
-Crie uma lista de números:
-- adicione 2 números
-- remova o último
-- imprima a lista final
-🎯 Manipulação básica de listas
-"""
+# """
+# 🟢 LISTAS
+# 📄 08_listas_criacao_indices_append_pop
+# 🧩 Exercício
+# Crie uma lista de números:
+# - adicione 2 números
+# - remova o último
+# - imprima a lista final
+# 🎯 Manipulação básica de listas
+# """
 # 1 - Lista inicial de números 
 lista_numeros = [15, 72, 4, 89, 33, 57, 21, 66]
 
@@ -198,14 +198,14 @@ lista_numeros.append(91)
 lista_numeros.pop()
 print(lista_numeros)
    
-#-----------------------------------------------------------------------------------------------------------------
+# #-----------------------------------------------------------------------------------------------------------------
 
-"""
-📄 09_listas_for_iteracao
-🧩 Exercício
-Percorra uma lista de nomes e imprima cada um.
-🎯 Iteração com for
-"""
+# """
+# 📄 09_listas_for_iteracao
+# 🧩 Exercício
+# Percorra uma lista de nomes e imprima cada um.
+# 🎯 Iteração com for
+# """
 # 1 - Lista de nomes
 lista_nomes = ['Wonwoo', 'Vernon', 'Mingyu', 'San', 'Jaemin']
 
@@ -213,15 +213,15 @@ lista_nomes = ['Wonwoo', 'Vernon', 'Mingyu', 'San', 'Jaemin']
 for nome in lista_nomes:
     print(nome)
    
-#-----------------------------------------------------------------------------------------------------------------
+# #-----------------------------------------------------------------------------------------------------------------
 
-"""
-📄 10_listas_aninhadas
-🧩 Exercício
-Crie uma lista de listas com números e:
-- imprima todos os valores usando dois for
-🎯 Laços aninhados
-"""
+# """
+# 📄 10_listas_aninhadas
+# 🧩 Exercício
+# Crie uma lista de listas com números e:
+# - imprima todos os valores usando dois for
+# 🎯 Laços aninhados
+# """
 # 1 - Lista com outras listas dentro da principal
 lista_numeros = [
     [3, 27, 44, 12, 38],
@@ -234,17 +234,17 @@ for sublista in lista_numeros:
     for numero in sublista:
         print(numero)
    
-#-----------------------------------------------------------------------------------------------------------------
+# #-----------------------------------------------------------------------------------------------------------------
 
-"""
-🟢 TUPLAS E SETS
-📄 11_tuplas_imutabilidade
-🧩 Exercício
-Crie uma tupla e:
-- tente alterar um valor
-- explique o erro em comentário
-🎯 Conceito de imutabilidade
-"""
+# """
+# 🟢 TUPLAS E SETS
+# 📄 11_tuplas_imutabilidade
+# 🧩 Exercício
+# Crie uma tupla e:
+# - tente alterar um valor
+# - explique o erro em comentário
+# 🎯 Conceito de imutabilidade
+# """
 # 1 - Criação da tupla com os nomes
 tupla_nomes = ('Wonwoo', 'Vernon', 'Jaemin', 'Jeno', 'San')
 
@@ -254,16 +254,16 @@ tupla_nomes.append('Mingyu')
 # Não é possível alterar ou adicionar algum valor novo na tupla, pois ela é imutavel
 print(tupla_nomes)
    
-#-----------------------------------------------------------------------------------------------------------------
+# #-----------------------------------------------------------------------------------------------------------------
 
-"""
-📄 12_sets_criacao_e_remocao
-🧩 Exercício
-Crie um set:
-- adicione valores duplicados
-- imprima o resultado
-🎯 Valores únicos
-"""
+# """
+# 📄 12_sets_criacao_e_remocao
+# 🧩 Exercício
+# Crie um set:
+# - adicione valores duplicados
+# - imprima o resultado
+# 🎯 Valores únicos
+# """
 # 1 - Criação da lista com o números e alguns duplicados
 numeros = [14, 7, 22, 7, 30, 14, 18, 5, 22, 9]
 
@@ -272,18 +272,18 @@ n1 = set(numeros)
 
 print(n1)
   
-#-----------------------------------------------------------------------------------------------------------------
+# #-----------------------------------------------------------------------------------------------------------------
 
-"""
-📄 13_sets_operadores_matematicos
-🧩 Exercício
-Utilize:
-- união
-- interseção
-- diferença
-- diferença simétrica
-🎯 Operações matemáticas em sets
-"""
+# """
+# 📄 13_sets_operadores_matematicos
+# 🧩 Exercício
+# Utilize:
+# - união
+# - interseção
+# - diferença
+# - diferença simétrica
+# 🎯 Operações matemáticas em sets
+# """
 # 1 - Criação do set
 n1 = {11, 25, 2}
 n2 = {17, 2, 28}
@@ -310,15 +310,15 @@ print()
 n6 = n1 ^ n2
 print('Diferença simétrica:', n6)
   
-#-----------------------------------------------------------------------------------------------------------------
+# #-----------------------------------------------------------------------------------------------------------------
 
-"""
-🟢 DICIONÁRIOS
-📄 14_dicionarios_criacao_e_acesso
-🧩 Exercício
-Crie um dicionário com dados de uma pessoa e imprima cada valor.
-🎯 Estrutura chave → valor
-"""
+# """
+# 🟢 DICIONÁRIOS
+# 📄 14_dicionarios_criacao_e_acesso
+# 🧩 Exercício
+# Crie um dicionário com dados de uma pessoa e imprima cada valor.
+# 🎯 Estrutura chave → valor
+# """
 # 1 - Criação do dicionario com os dados da pessoa
 pessoa = {
     'nome': 'Jeon Wonwoo',
@@ -330,15 +330,15 @@ pessoa = {
 for valor in pessoa.values():
     print(valor)
 
-#-----------------------------------------------------------------------------------------------------------------
+# #-----------------------------------------------------------------------------------------------------------------
  
-"""
-📄 15_dicionarios_iteracao_items
-🧩 Exercício
-Percorra um dicionário e imprima:
-chave: valor
-🎯 Iteração com .items()
-"""
+# """
+# 📄 15_dicionarios_iteracao_items
+# 🧩 Exercício
+# Percorra um dicionário e imprima:
+# chave: valor
+# 🎯 Iteração com .items()
+# """
 # 1 - Criação do dicionario com os dados da pessoa
 pessoa = {
     'nome': 'Vernon',
@@ -351,15 +351,15 @@ pessoa = {
 for chave, valor in pessoa.items():
     print(chave, valor)
     
-#-----------------------------------------------------------------------------------------------------------------
+# #-----------------------------------------------------------------------------------------------------------------
   
-"""
-🟢 FUNÇÕES
-📄 16_funcoes_definicao_retorno
-🧩 Exercício
-Crie uma função que receba dois números e retorne a soma.
-🎯 Entrada → processamento → saída
-"""
+# """
+# 🟢 FUNÇÕES
+# 📄 16_funcoes_definicao_retorno
+# 🧩 Exercício
+# Crie uma função que receba dois números e retorne a soma.
+# 🎯 Entrada → processamento → saída
+# """
 # 1 - Criação da função
 def soma(a, b):
     # 1.1 - Retorno da função
@@ -384,13 +384,53 @@ Crie uma função que receba nome e idade e exiba uma frase.
 🎯 Passagem de dados para funções
 """
 
+# 1 - Criar uma função que retorna o nome e a idade
+def dados(nome, idade):
+    # 2 - Eixbre uma frase utilizando os valores recebidos como parâmetros
+    print(f'Seu nome é {nome} e sua idade é {idade} anos.')
+
+#3 - Solicita ao usuário o nome
+nome_usuario = input('Digite seu nome: ')
+
+# 4 - Solicita ao usuário a idade
+idade_usuario = int(input('Digite sua idade: '))
+
+# 5 - Chamada da função passando os dados informados
+dados(nome_usuario, idade_usuario)
+    
+#-----------------------------------------------------------------------------------------------------------------
+ 
 """
 📄 18_funcoes_com_args
 🧩 Exercício
 Crie uma função que receba vários números com *args e retorne a soma.
 🎯 Empacotamento
 """
+# 1 - Função que recebe vários argumentos não nomeados
+def soma(*args):
+    total = 0
 
+    # 2 - Percorre todos os valores recebidos em args
+    for numero in args:
+        # 2.1 Soma cada número ao total acumulado
+        total += numero
+
+    # 3 - Retorna o valor total da soma
+    return total
+
+# 4 - Chamando a função com varios argumentos
+soma_1 = soma(1, 2, 3)
+soma_2 = soma(4, 5, 6)
+
+# 5 - Tupla de números
+numeros = 1, 2, 3, 4, 5, 7, 78, 10
+
+# 6 - Desempacotamento da tupla para passar como argumentos
+outra_soma = soma(*numeros)
+print(outra_soma)
+    
+#-----------------------------------------------------------------------------------------------------------------
+ 
 """
 🟢 ESCOPO E LÓGICA
 📄 19_escopo_variaveis
@@ -398,14 +438,62 @@ Crie uma função que receba vários números com *args e retorne a soma.
 Crie uma variável global e uma local e mostre a diferença.
 🎯 Escopo de variáveis
 """
+# 1 - Variável global
+x = 1
 
+def escopo():
+    # 2 - Variável local da função
+    x = 10
+    print('Valor de x no escopo local:', x)
+
+    def outra_funcao():
+        # 3 - Variável local da função interna
+        y = 2
+        print('Valor de x ainda local:', x)
+        print('Valor de y no escopo interno:', y)
+
+    outra_funcao()
+
+print('Valor de x no escopo global:', x)
+escopo()
+print('Valor de x após a função:', x)
+    
+#-----------------------------------------------------------------------------------------------------------------
+ 
 """
 📄 20_logica_primeiro_duplicado
 🧩 Exercício
 Crie uma função que encontre o primeiro número duplicado, considerando a segunda ocorrência.
 🎯 Lógica sequencial + controle de fluxo
 """
+# 1 - Função que recebe uma lista de inteiros
+def encontra_primeiro_duplicado(lista_de_inteiros):
+    # 2 - Estrutura auxiliar para armazenar números já vistos
+    numeros_vistos = set()
 
+    # 3 - Percorre a lista em ordem
+    for numero in lista_de_inteiros:
+        # 4 - Verifica se o número já foi visto anteriormente
+        if numero in numeros_vistos:
+            return numero
+        
+        # 5 - Armazena o número no conjunto
+        numeros_vistos.add(numero)
+
+    # 6 - Retorna None caso não exista duplicado
+    return None
+
+listas = [
+    [1, 2, 3, 2, 5],
+    [1, 2, 3, 4, 5],
+    [9, 1, 9, 3],
+]
+
+for lista in listas:
+    print(lista, encontra_primeiro_duplicado(lista))
+    
+#-----------------------------------------------------------------------------------------------------------------
+ 
 """
 🟢 LAMBDA, SORT, SORTED
 📄 26_lambda_sort_sorted
@@ -416,7 +504,33 @@ Ordene uma lista de dicionários:
   Sem modificar a lista original.
 🎯 Funções anônimas + ordenação
 """
+produtos = [
+    {'nome': 'Caderno', 'preco': 15.90},
+    {'nome': 'Caneta', 'preco': 2.50},
+    {'nome': 'Borracha', 'preco': 1.25},
+    {'nome': 'Lápis', 'preco': 1.00},
+    {'nome': 'Régua', 'preco': 5.75}
+]
 
+def exibir(lista):
+    # Percorre a lista e exibe cada item
+    for item in lista:
+        print(item)
+
+    print()
+
+# Lista ordenada pelo nome (ordem alfabética)
+l1 = sorted(produtos, key=lambda item: item['nome'])
+
+# Lista ordenada pelo preço (ordem crescente)
+l2 = sorted(produtos, key=lambda item: item['preco'])
+
+exibir(l1)
+
+exibir(l2)
+    
+#-----------------------------------------------------------------------------------------------------------------
+ 
 """
 📄 27_lambda_retorna_funcao
 🧩 Exercício
@@ -425,7 +539,21 @@ Crie uma função que:
 - retorne outra função que multiplica por esse número
 🎯 Closures + lambda
 """
+# 1 - Função que executa outra função recebida como parâmetro
+def executa(funcao, *args):
+    return funcao(*args)
 
+# 2 - Lambda que retorna outra função (closure)
+multiplica = executa(
+    lambda m: lambda n: n * m,
+    2
+)
+
+# 3 - Executa a função retornada
+print(multiplica(2))
+ 
+#-----------------------------------------------------------------------------------------------------------------
+ 
 """
 🟢 *ARGS E **KWARGS
 📄 28_args_kwargs_empacotamento_dicionarios
@@ -436,3 +564,20 @@ Crie uma função que:
 - exiba todos os dados corretamente
 🎯 Empacotamento e desempacotamento
 """
+def mostra_argumentos_nomeados(*args, **kwargs):
+    # Exibe os argumentos não nomeados
+    print('NÃO NOMEADOS:', *args)
+
+    # Exibe os argumentos nomeados
+    for chave, valor in kwargs.items():
+        print(chave, valor)
+
+configuracoes = {
+    'arg1': 1,
+    'arg2': 2,
+    'arg3': 3,
+    'arg4': 4,
+}
+
+# Desempacotamento do dicionário
+mostra_argumentos_nomeados(**configuracoes)
