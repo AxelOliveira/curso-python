@@ -13,7 +13,7 @@ for numero in range(10):
 
 # --------------------------------------------------------------------------------------
 
-# Reatribui a veriável lista usando list comprehension
+# Reatribui a variável lista usando list comprehension
 # Aqui estamos criando uma nova lista do zero
 lista = [
     # Expressão: define o valor que será colocado na lista

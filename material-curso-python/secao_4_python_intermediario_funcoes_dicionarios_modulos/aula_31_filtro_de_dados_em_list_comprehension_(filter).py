@@ -37,7 +37,7 @@ novos_produtos = [
     # FILTRO:
     # O produto só entra na lista final se:
     # - o preço for maior ou igual a 20
-    # - e o preço com aumento fo maior que 10
+    # - e o preço com aumento for maior que 10
     if (produto['preco'] >= 20 and produto['preco'] * 1.05) > 10
 ]
 
