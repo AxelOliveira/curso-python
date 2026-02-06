@@ -7,7 +7,7 @@ dir(objeto):
 - Mostra todos os atributos e métodos disponíveis no objeto
 
 hasattr(objeto, 'nome'):
-- Verifica se o objeto possui determinado atribudo ou método
+- Verifica se o objeto possui determinado atributo ou método
 - Retorna True ou False
 
 getattr(objeto, 'nome'):

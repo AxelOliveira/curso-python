@@ -24,7 +24,7 @@ produto = {
 }
 
 # Percorremos chave e valor com .items()
-# Se o valore for string, transforma em MAIÚSCULO
+# Se o valor for string, transforma em MAIÚSCULO
 # Ignora a chave 'categoria'
 dc = {
     chave: valor.upper() if isinstance(valor, str) else valor
