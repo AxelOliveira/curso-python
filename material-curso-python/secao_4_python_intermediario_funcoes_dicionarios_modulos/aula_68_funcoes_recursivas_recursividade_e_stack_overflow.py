@@ -1,22 +1,25 @@
-# Funções recursivas e recursividade
-# - funções que podem se chamar de volta
-# - úteis para dividir problemas grandes em partes menores
-# Toda função recursiva deve ter:
-# - Um problema que possa ser dividido em partes menores
-# - Um caso recursivo que resolve o pequeno problema
-# - Um caso base que para a recursão
-# - fatorial - n! = 5! = 5 * 4 * 3 *2 * 1 = 120
-# https://brasilescola.uol.com.br/matematica/fatorial.htm
+"""
+Funções recursivas e recursividade
+- funções que chamam a si mesmas
+- úteis para dividir um problema grande em partes menores
+
+Toda função recursiva deve ter:
+- Um problema que possa ser dividido em partes menores
+- Um caso recursivo (continua a execução)
+- Um caso base (condição de parada)
+
+Exemplo: fatorial
+n! = 5! = 5 * 4 * 3 * 2 * 1 = 120
+"""
 def recursiva(inicio=0, fim=4):
 
     print(inicio, fim)
 
-    # Caso base
+    # Caso base: para quando atingir ou ultrapassar o gim
     if inicio >= fim:
         return fim
     
-    # Caso recursivo
-    # contar até chegar ao final
+    # Caso recursivo: aproxima do fim incrementando o valor
     inicio += 1
     return recursiva(inicio, fim)
 
