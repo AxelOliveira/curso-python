@@ -1,78 +1,46 @@
-# Leia também: https://www.otaviomiranda.com.br/2020/normalizacao-unicode-em-python/
-# with open (context manager) e métodos úteis do TextIOWrapper
-# Usamos a função open para abrir
-# um arquivo em Python (ele pode ou não existir)
-# Modos:
-# r (leitura), w (escrita), x (para criação)
-# a (escreve ao final), b (binário)
-# t (modo texto), + (leitura e escrita)
-# Context manager - with (abre e fecha)
-# Métodos úteis
-# write, read (escrever e ler)
-# writelines (escrever várias linhas)
-# seek (move o cursor)
-# readline (ler linha)
-# readlines (ler linhas)
-# Vamos falar mais sobre o módulo os, mas:
-# os.remove ou unlink - apaga o arquivo
-# os.rename - troca o nome ou move o arquivo
-# Vamos falar mais sobre o módulo json, mas:
-# json.dump = Gera um arquivo json
-# json.load
+"""
+TEORIA - MODOS DE ABERTURA + ENCODING
+
+1. Modos principais:
+    - 'r' -> leitura (arquivo deve existir)
+    - 'w' -> escrita (APAGA tudo e escreve de novo)
+    - 'a' -> append (NÃO apaga, escreve no final)
+    - 'x' -> cria (erro se já existir)
+    - '+' -> leitura + escrita
+
+2. Diferença CRÍTICA:
+    - w -> sempre começa do zero (zera o arquivo)
+    - a -> continua do final (não perde dados)
+
+3. encoding:
+    - Define como os caracteres são salvos (acentos, ç, etc)
+    - Problema comum no Windows: caracteres quebrados
+    - Solução: usar encoding='utf-8'
+
+4. Regra prática:
+    - Sempre usar encoding='utf-8'ao trabalhar com texto
+
+5. Cursor continua existindo:
+    - Mesmo conceito da aula anterior (seek)
+"""
 caminho_arquivo = 'aula77.txt'
 
-# arquivo = open(caminho_arquivo, 'w')
-# #
-# arquivo.close()
+# 1 - Escrevendo (APAGA tudo sempre)
+with open(caminho_arquivo, 'w', encoding='utf-8') as arquivo:
 
-with open(caminho_arquivo, 'w+') as arquivo:
-# with open(caminho_arquivo, 'w+') as arquivo:
-#     arquivo.write('Linha 1\n')
-#     arquivo.write('Linha 2\n')
-#     arquivo.writelines(
-#         ('Linha 3\n', 'Linha 4\n')
-#     )
-#     arquivo.seek(0, 0)
-#     print(arquivo.read())
-#     print('Lendo')
-#     arquivo.seek(0, 0)
-#     print(arquivo.readline(), end='')
-#     print(arquivo.readline().strip())
-#     print(arquivo.readline().strip())
+    # 2 - Escrevendo com acentuação
+    arquivo.write('Atenção\n')
+    arquivo.write('Linhas 1\n')
 
-#     print('READLINES')
-#     arquivo.seek(0, 0)
-#     for linha in arquivo.readlines():
-#         print(linha.strip())
+# 3 - Adicionando conteúdo (NÃO apaga)
+with open(caminho_arquivo, 'a', encoding='utf-8') as arquivo:
 
+    # 4 - Adiciona no final do arquivo
+    arquivo.write('Linha 2\n')
+    arquivo.write('Linha 3\n')
 
-# print('#' * 10)
+print('#' * 10)
 
-# with open(caminho_arquivo, 'r') as arquivo:
-#     print(arquivo.read())
-
-    with open(caminho_arquivo, 'w', encoding='utf8') as arquivo:
-        arquivo.write('Atenção\n')
-        arquivo.write('Linha 1\n')
-        arquivo.write('Linha 2\n')
-        arquivo.writelines(
-            ('Linha 3\n', 'Linha 4\n')
-        )
-        arquivo.seek(0)
-        print(arquivo.read())
-        print('Lendo')
-        arquivo.seek(0, 0)
-        print(arquivo.readline(), end='')
-        print(arquivo.readline().strip())
-        print(arquivo.readline().strip())
-
-        print('READLINES')
-        arquivo.seek(0, 0)
-        for linha in arquivo.readlines():
-            print(linha.strip())
-
-
-    print('#' * 10)
-
-with open(caminho_arquivo, 'r') as arquivo:
+# 5 - Lendo o arquivo
+with open(caminho_arquivo, 'r', encoding='utf-8') as arquivo:
     print(arquivo.read())
