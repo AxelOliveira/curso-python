@@ -204,3 +204,167 @@ def func_global() -> None:
 func_global()
 print()
 print(globals())
+
+#
+#
+#
+#
+#
+
+################################################################################
+#
+# A regra LEGB e como o Python a usa para resolver nomes
+#
+# O Python segue uma ordem específica e unidirecional para busca por nomes.
+# A ordem sempre vai do escopo mais interno para o mais externo:
+#
+# Certo ✅: Local -> Enclosing -> Global -> Built-In -> ❌ NameError
+# Errado ❌: Built-In -> ❌Global -> ❌Enclosing -> ❌Local
+#
+# De nenhum escopo externo é possível usar algo de escopo interno.
+#
+################################################################################
+import inspect
+
+nome_global = "nome_global"
+
+
+def func_global() -> None:
+    nome_enclosing = "nome_enclosing"  # Enclosing (Local)
+
+    def func_interna() -> None:
+        print("IMPRIMINDO", nome_enclosing)
+
+        # nome_enclosing = "CRIAR UMA NOVA VARIÁVEL NESSE ESCOPO"
+
+        def func_mais_interna() -> None:
+            nome_local = "nome_local"  # Local
+
+            get_legb("nome_enclosing", inspect.currentframe())
+            print(
+                "LOCAL:",
+                nome_local,
+                nome_enclosing,
+                "funcao_interna",
+                nome_global,
+                "+builtins",
+            )
+
+        func_mais_interna()
+
+    func_interna()
+    # print(
+    #     "ENCLOSING:",
+    #     nome_enclosing,
+    #     "funcao_interna",
+    #     "funcao_global",
+    #     nome_global,
+    #     "+builtins",
+    # )
+
+
+func_global()
+# print("GLOBAL:", nome_global, "func_global", "+builtins")
+
+#
+#
+#
+#
+#
+
+################################################################################
+#
+# Uso de `global` e `nonlocal` para mudar o comportamento
+#
+# Quando você define um nome em determinado escopo, o Python assume que aquele
+# nome é único naquele escopo. Por isso, é impossível modificar o valor de um
+# nome do escopo externo sem informar isso ao interpretador.
+#
+# ** `global` - Para modificar nomes do escopo global dentro de qualquer escopo
+#               local, precisamos usar a palavra chave `global`.
+# ** `nonlocal` -  Para modificar os nomes do escopo `enclosing` dentro de qualquer
+#               escopo local, precisamos usar a palavra chave `nonlocal`.
+#
+################################################################################
+
+
+nome_global = "nome_global"
+
+
+def func_global() -> None:
+    global nome_global
+
+    nome_enclosing = "nome_enclosing"
+    nome_global = 123456
+
+    def func_interna() -> None:
+        def func3() -> None:
+            def func4() -> None:
+                nonlocal nome_enclosing
+
+                nome_local = "nome_local"
+                nome_enclosing = 654321
+
+                print("func_interna", nome_enclosing)
+
+            func4()
+
+        func3()
+
+    func_interna()
+    print("func_global", nome_enclosing)
+
+
+func_global()
+# print("NO GLOBAL", nome_global)
+
+#
+#
+#
+#
+#
+
+################################################################################
+#
+# PARA NERDS: varnames, freevars, cellvars
+#
+# Em alguns momentos você pode ver um comportamento estranho ao solicitar o
+# namespace local de uma função. Ao LER uma variável do enclosing, ela pode
+# aparecer como parte do namespace local (da a impressão que ela foi definida
+# internamente na função). O que é isso?
+#
+# Detalhe: isso pode mudar dependendo do interpretador que você usar.
+#
+# ** Freevars são as variáveis da função externa que estão sendo usadas dentro
+#    da função interna. A gente detecta isso pela função interna, porque ela é
+#    quem depende desses nomes. Eles entram em co_freevars.
+# ** Cellvars são as variáveis declaradas na função atual (externa) que
+#    precisam ser capturadas porque são usadas por funções internas. A gente
+#    detecta isso pela função externa, porque ela é quem fornece essas
+#    variáveis pro closure. Eles aparecem em co_cellvars.
+# ** Varnames são as variáveis locais de verdade, exclusivas da função. Elas
+#    estão em co_varnames e não fazem parte de nenhum closure, só existem ali
+#    dentro mesmo.
+#
+#
+################################################################################
+
+
+nome_global = "nome_global"
+
+
+def func_global() -> None:
+    nome_enclosing = nome_global
+
+    def func_interna() -> None:
+        nome_local = nome_enclosing
+
+        print("dir/locals func_interna: ", f"[color(45)]{', '.join(dir())}")
+        get_all_names(func_interna.__code__)
+
+    func_interna()
+    print("dir/locals de func_global: ", f"[color(45)]{', '.join(dir())}")
+    get_all_names(func_global.__code__)
+
+
+func_global()
